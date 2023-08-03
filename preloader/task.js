@@ -6,6 +6,10 @@ xhr.onload = leadsToTheSite;
 
 
 function leadsToTheSite () {
+    // Обрабатывает успешно загруженный ответ от сервера в виде "json".
+    // Преобразует полученные данные о валютах в стандартный HTML-шаблон для валюты
+    // и подгружает в элемент #items. 
+    // После полной обработки ответа сервера скрывает анимацию загрузки.
     const items = document.getElementById("items");
     let currencies = xhr.response.response.Valute;
     for (key in currencies) {
